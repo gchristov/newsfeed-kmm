@@ -6,6 +6,7 @@ import com.gchristov.newsfeed.kmmfeeddata.model.SectionedFeed
 import com.gchristov.newsfeed.kmmfeeddata.model.hasNextPage
 import com.gchristov.newsfeed.kmmfeeddata.usecase.GetSectionedFeedUseCase
 import com.gchristov.newsfeed.kmmfeeddata.usecase.RedecorateSectionedFeedUseCase
+import dev.gitlive.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,7 +17,8 @@ class FeedViewModel(
     dispatcher: CoroutineDispatcher,
     private val feedRepository: FeedRepository,
     private val getSectionedFeedUseCase: GetSectionedFeedUseCase,
-    private val redecorateSectionedFeedUseCase: RedecorateSectionedFeedUseCase
+    private val redecorateSectionedFeedUseCase: RedecorateSectionedFeedUseCase,
+    private val firestore: FirebaseFirestore
 ) : CommonViewModel<FeedViewModel.State>(
     dispatcher = dispatcher,
     initialState = State()
@@ -26,6 +28,11 @@ class FeedViewModel(
     init {
         loadNextPage()
         observeSearchQuery()
+        launchUiCoroutine {
+            println("About to test Firestore")
+            val document = firestore.document("preferences/user1").get()
+            println("Got Firestore document: exists=${document.exists}, theme=${document.get<String>("theme")}")
+        }
     }
 
     /**

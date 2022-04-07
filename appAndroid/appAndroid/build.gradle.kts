@@ -15,3 +15,5 @@ dependencies {
     implementation(projects.commonDesign)
     implementation(projects.feed)
 }
+
+apply(plugin = "com.google.gms.google-services")

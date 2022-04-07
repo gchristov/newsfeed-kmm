@@ -32,6 +32,7 @@ kotlin {
         binaries {
             framework {
                 baseName = "KmmShared"
+                isStatic = true
                 exportedDependencies.forEach { export(it) }
                 // Required for SQLDelight
                 freeCompilerArgs = freeCompilerArgs + arrayOf("-linker-options", "-lsqlite3")

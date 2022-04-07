@@ -20,3 +20,5 @@ appIos/common-design/common-design.xcodeproj/xcuserdata
 appIos/common-swiftui-test/common-swiftui-test.xcodeproj/xcuserdata
 appIos/feed-test-fixtures/feed-test-fixtures.xcodeproj/xcuserdata
 appIos/post-test-fixtures/post-test-fixtures.xcodeproj/xcuserdata
+google-services.json
+GoogleService-Info.plist

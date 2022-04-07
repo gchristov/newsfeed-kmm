@@ -2,6 +2,7 @@ package com.gchristov.newsfeed.kmmfeed
 
 import com.gchristov.newsfeed.kmmcommondi.DiModule
 import com.gchristov.newsfeed.kmmcommondi.inject
+import com.gchristov.newsfeed.kmmcommonfirebase.CommonFirebaseModule
 import com.gchristov.newsfeed.kmmfeeddata.FeedDataModule
 import kotlinx.coroutines.Dispatchers
 import org.kodein.di.DI
@@ -18,14 +19,15 @@ object FeedModule : DiModule() {
                     dispatcher = Dispatchers.Main,
                     feedRepository = instance(),
                     getSectionedFeedUseCase = instance(),
-                    redecorateSectionedFeedUseCase = instance()
+                    redecorateSectionedFeedUseCase = instance(),
+                    firestore = instance()
                 )
             }
         }
     }
 
     override fun moduleDependencies(): List<DI.Module> {
-        return listOf(FeedDataModule.module)
+        return listOf(FeedDataModule.module, CommonFirebaseModule.module)
     }
 
     fun injectFeedViewModel(): FeedViewModel = inject()

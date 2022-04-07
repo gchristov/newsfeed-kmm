@@ -67,12 +67,18 @@ class Deps {
         const val compileSdk = 31
     }
 
+    object Firebase {
+        private const val firebaseVersion = "1.5.0"
+        const val firestore = "dev.gitlive:firebase-firestore:$firebaseVersion"
+    }
+
     object Kodein {
         const val di = "org.kodein.di:kodein-di:7.9.0"
     }
 
     object Kotlin {
         private const val coroutinesVersion = "1.6.0"
+
         // "-native-mt" is required here, otherwise iOS fails with runtime exception
         const val coroutinesCore =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion-native-mt"

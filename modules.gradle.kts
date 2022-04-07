@@ -4,6 +4,7 @@
  */
 val projects = listOf(
     "kmm-common-di",
+    "kmm-common-firebase",
     "kmm-common-kotlin",
     "kmm-common-mvvm",
     "kmm-common-mvvm-test",
