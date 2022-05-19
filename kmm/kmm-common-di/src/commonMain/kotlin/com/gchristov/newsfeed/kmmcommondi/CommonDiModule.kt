@@ -15,13 +15,19 @@ object CommonDiModule : DiModule() {
     }
 
     @OptIn(ExperimentalKermitApi::class)
-    private fun provideLogger(): Logger = Logger(
-        config = StaticConfig(
-            minSeverity = Severity.Debug,
-            logWriterList = listOf(
-                CommonWriter(),
-                CrashlyticsLogWriter()
+    private fun provideLogger(): Logger {
+        val logger = Logger(
+            config = StaticConfig(
+                minSeverity = Severity.Debug,
+                logWriterList = listOf(
+                    CommonWriter(),
+                    CrashlyticsLogWriter()
+                )
             )
         )
-    )
+        registerNativeLogger(logger)
+        return logger
+    }
 }
+
+internal expect fun registerNativeLogger(logger: Logger)

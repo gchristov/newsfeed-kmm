@@ -18,6 +18,7 @@
 		46AA1227279EFBE30066D1A0 /* Post.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464126C1272308AD0094BF9B /* Post.framework */; platformFilter = ios; };
 		46AA1228279EFBE30066D1A0 /* Post.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 464126C1272308AD0094BF9B /* Post.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46AA122F27A2BC350066D1A0 /* PostUiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA1217279EF4910066D1A0 /* PostUiTest.swift */; };
+		46BA3F4028368EB500A7E2ED /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 46BA3F3F28368EB500A7E2ED /* FirebaseCrashlytics */; };
 		46BE5CA128317F4800C0DC9F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 46BE5CA028317F4800C0DC9F /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BA3F4028368EB500A7E2ED /* FirebaseCrashlytics in Frameworks */,
 				4642A9F22725755D005B31ED /* CommonSwiftUi.framework in Frameworks */,
 				46BE5CA128317F4800C0DC9F /* FirebaseFirestore in Frameworks */,
 			);
@@ -173,7 +175,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 464126C8272308AD0094BF9B /* Build configuration list for PBXNativeTarget "Post" */;
 			buildPhases = (
-				464126CB272308D50094BF9B /* ShellScript */,
+				464126CB272308D50094BF9B /* Build KMM Framework */,
 				464126BC272308AD0094BF9B /* Headers */,
 				464126BD272308AD0094BF9B /* Sources */,
 				464126BE272308AD0094BF9B /* Frameworks */,
@@ -187,6 +189,7 @@
 			name = Post;
 			packageProductDependencies = (
 				46BE5CA028317F4800C0DC9F /* FirebaseFirestore */,
+				46BA3F3F28368EB500A7E2ED /* FirebaseCrashlytics */,
 			);
 			productName = post;
 			productReference = 464126C1272308AD0094BF9B /* Post.framework */;
@@ -300,7 +303,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		464126CB272308D50094BF9B /* ShellScript */ = {
+		464126CB272308D50094BF9B /* Build KMM Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,6 +312,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Build KMM Framework";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -396,7 +400,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -488,6 +492,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5G893F5HW7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -520,6 +525,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5G893F5HW7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -708,6 +714,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		46BA3F3F28368EB500A7E2ED /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46BE5C9F28317F4800C0DC9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		46BE5CA028317F4800C0DC9F /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 46BE5C9F28317F4800C0DC9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
