@@ -20,7 +20,8 @@ object FeedModule : DiModule() {
                     feedRepository = instance(),
                     getSectionedFeedUseCase = instance(),
                     redecorateSectionedFeedUseCase = instance(),
-                    firestore = instance()
+                    firestore = instance(),
+                    logger = instance()
                 )
             }
         }

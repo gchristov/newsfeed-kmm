@@ -9,6 +9,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(Deps.Kodein.di)
+                api(Deps.Kermit.logger)
+                implementation(Deps.Kermit.crashLogger)
             }
         }
     }

@@ -72,6 +72,12 @@ class Deps {
         const val firestore = "dev.gitlive:firebase-firestore:$firebaseVersion"
     }
 
+    object Kermit {
+        private const val kermitVersion = "1.1.2"
+        const val logger = "co.touchlab:kermit:$kermitVersion"
+        const val crashLogger = "co.touchlab:kermit-crashlytics:$kermitVersion"
+    }
+
     object Kodein {
         const val di = "org.kodein.di:kodein-di:7.9.0"
     }
@@ -87,12 +93,6 @@ class Deps {
         const val dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:0.3.2"
     }
 
-    object Mvvm {
-        private const val mvvmVersion = "0.12.0"
-        const val liveData = "dev.icerock.moko:mvvm-livedata:$mvvmVersion"
-        const val test = "dev.icerock.moko:mvvm-test:$mvvmVersion"
-    }
-
     object Ktor {
         private const val ktorVersion = "1.6.7"
         const val clientCore = "io.ktor:ktor-client-core:$ktorVersion"
@@ -101,6 +101,12 @@ class Deps {
         const val clientAndroid = "io.ktor:ktor-client-android:$ktorVersion"
         const val clientIos = "io.ktor:ktor-client-ios:$ktorVersion"
         const val logbackClassic = "ch.qos.logback:logback-classic:1.2.10"
+    }
+
+    object Mvvm {
+        private const val mvvmVersion = "0.12.0"
+        const val liveData = "dev.icerock.moko:mvvm-livedata:$mvvmVersion"
+        const val test = "dev.icerock.moko:mvvm-test:$mvvmVersion"
     }
 
     object SqlDelight {

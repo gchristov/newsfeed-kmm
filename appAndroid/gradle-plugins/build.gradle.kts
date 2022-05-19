@@ -34,3 +34,10 @@ repositories {
 dependencies {
     implementation("com.android.tools.build:gradle:7.2.0")
 }
+
+// Needed to make all Kotlin versions the same during Xcode build (not picked up from project/build.gradle.kts for some reason)
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}

@@ -81,6 +81,13 @@ class Deps : Plugin<Project> {
         const val html = "com.github.ireward:compose-html:1.0.1"
     }
 
+    object Firebase {
+        private const val firebaseVersion = "30.0.1"
+        const val bom = "com.google.firebase:firebase-bom:$firebaseVersion"
+        const val analytics = "com.google.firebase:firebase-analytics-ktx"
+        const val crashlytics = "com.google.firebase:firebase-crashlytics-ktx"
+    }
+
     object Tests {
         const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         const val junit = "junit:junit:4.13.2"

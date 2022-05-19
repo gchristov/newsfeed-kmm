@@ -1,5 +1,6 @@
 package com.gchristov.newsfeed.kmmfeed
 
+import co.touchlab.kermit.Logger
 import com.gchristov.newsfeed.kmmcommonmvvm.CommonViewModel
 import com.gchristov.newsfeed.kmmfeeddata.FeedRepository
 import com.gchristov.newsfeed.kmmfeeddata.model.SectionedFeed
@@ -18,7 +19,8 @@ class FeedViewModel(
     private val feedRepository: FeedRepository,
     private val getSectionedFeedUseCase: GetSectionedFeedUseCase,
     private val redecorateSectionedFeedUseCase: RedecorateSectionedFeedUseCase,
-    private val firestore: FirebaseFirestore
+    private val firestore: FirebaseFirestore,
+    private val logger: Logger
 ) : CommonViewModel<FeedViewModel.State>(
     dispatcher = dispatcher,
     initialState = State()
@@ -29,9 +31,9 @@ class FeedViewModel(
         loadNextPage()
         observeSearchQuery()
         launchUiCoroutine {
-            println("About to test Firestore")
+            logger.d("About to test Firestore")
             val document = firestore.document("preferences/user1").get()
-            println("Got Firestore document: exists=${document.exists}, theme=${document.get<String>("theme")}")
+            logger.d("Got Firestore document: exists=${document.exists}, theme=${document.get<String>("theme")}")
         }
     }
 
