@@ -8,6 +8,9 @@
       location = "group:common-design/common-design.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:common-firebase/common-firebase.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:common-swiftui/common-swiftui.xcodeproj">
    </FileRef>
    <FileRef

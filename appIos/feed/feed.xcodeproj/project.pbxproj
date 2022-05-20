@@ -177,7 +177,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 464126AB2722DD760094BF9B /* Build configuration list for PBXNativeTarget "Feed" */;
 			buildPhases = (
-				464126B32722FD400094BF9B /* Build KMM Framework */,
+				464126B32722FD400094BF9B /* Build Feed KMM Framework */,
 				4641269F2722DD760094BF9B /* Headers */,
 				464126A02722DD760094BF9B /* Sources */,
 				464126A12722DD760094BF9B /* Frameworks */,
@@ -302,7 +302,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		464126B32722FD400094BF9B /* Build KMM Framework */ = {
+		464126B32722FD400094BF9B /* Build Feed KMM Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,14 +311,14 @@
 			);
 			inputPaths = (
 			);
-			name = "Build KMM Framework";
+			name = "Build Feed KMM Framework";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Shared KMM compilation needed here in addition to the main app because Xcode compiles \n# projects based on dependencies so this module might be compiled before anything else, \n# in which case we might get Xcode errors about missing KMM modules\necho \"Building shared KMM module for target $TARGET_NAME\"\ncd \"$SRCROOT/../..\"\n./gradlew :kmm-umbrella:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "# Shared KMM compilation needed here in addition to the main app because Xcode compiles \n# projects based on dependencies so this module might be compiled before anything else, \n# in which case we might get Xcode errors about missing KMM modules\ncd \"$SRCROOT/../..\"\n./gradlew :kmm-umbrella:embedAndSignAppleFrameworkForXcode\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
