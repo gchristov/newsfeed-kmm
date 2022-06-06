@@ -23,6 +23,7 @@ val projects = listOf(
     "common-compose",
     "common-compose-test",
     "common-design",
+    "common-firebase",
     "common-navigation",
     "common-test",
     "feed",
